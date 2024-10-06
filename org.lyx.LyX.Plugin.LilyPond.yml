@@ -18,9 +18,10 @@ modules:
   - name: gc-guile
     buildsystem: autotools
     sources:
-      - type: archive
-        url: https://www.hboehm.info/gc/gc_source/gc-8.2.4.tar.gz
-        sha256: 3d0d3cdbe077403d3106bb40f0cbb563413d6efdbb2a7e1cd6886595dec48fc2
+      - type: git
+        url: https://github.com/ivmai/bdwgc.git
+        tag: v8.2.8
+        commit: ee59af3722e56de8404de6cd0c21c2493cc4d855
   - name: guile
     buildsystem: autotools
     config-opts:
@@ -29,8 +30,8 @@ modules:
       #- --with-libraries=/app/Extensions/lib
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/guile/guile-3.0.9.tar.xz
-        sha256: 1a2625ac72b2366e95792f3fe758fd2df775b4044a90a4a9787326e66c0d750d
+        url: https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.xz
+        sha256: bd7168517fd526333446d4f7ab816527925634094fbd37322e17e2b8d8e76388
   - name: fontforge
     buildsystem: cmake-ninja
     builddir: true
@@ -79,7 +80,7 @@ modules:
         ${FLATPAK_ID}
     sources:
       - type: archive
-        url: https://lilypond.org/download/sources/v2.24/lilypond-2.24.3.tar.gz
-        sha256: df005f76ef7af5a4cd74a10f8e7115278b7fa79f14018937b65c109498ec44be
+        url: https://lilypond.org/download/sources/v2.24/lilypond-2.24.4.tar.gz
+        sha256: e96fa03571c79f20e1979653afabdbe4ee42765a3d9fd14953f0cd9eea51781c
       - type: file
         path: org.lyx.LyX.Plugin.LilyPond.metainfo.xml
