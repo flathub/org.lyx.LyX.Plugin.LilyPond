@@ -3,7 +3,7 @@ runtime: org.lyx.LyX
 runtime-version: stable
 sdk: org.kde.Sdk//6.8
 build-extension: true
-appstream-compose: false
+separate-locales: false
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.texlive
 build-options:
@@ -76,8 +76,6 @@ modules:
           prepend-path: /usr/lib/sdk/texlive/bin/x86_64-linux:/usr/lib/sdk/texlive/bin
     post-install: 
       - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml
-      - appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak
-        ${FLATPAK_ID}
     sources:
       - type: archive
         url: https://lilypond.org/download/sources/v2.24/lilypond-2.24.4.tar.gz
