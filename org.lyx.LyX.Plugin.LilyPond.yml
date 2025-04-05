@@ -85,11 +85,10 @@ modules:
         
   - name: fonts
     buildsystem: simple
-    #subdir: gonville-20231028.4ec6d4f
     build-commands:
-      - cp "*.otf" /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/otf/
-      - cp "*.svg" /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/svg/
-      - cp "*.woff" /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/svg/
+      - cp "gonville-20231028.4ec6d4f/*.otf" /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/otf/
+      - cp "gonville-20231028.4ec6d4f/*.svg" /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/svg/
+      - cp "gonville-20231028.4ec6d4f/*.woff" /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/svg/
     sources:
       - type: archive #gonville
         url: https://www.chiark.greenend.org.uk/~sgtatham/gonville/gonville-20231028.4ec6d4f.tar.gz
