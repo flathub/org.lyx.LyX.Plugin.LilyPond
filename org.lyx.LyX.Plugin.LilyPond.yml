@@ -72,23 +72,13 @@ modules:
         url: https://lilypond.org/download/sources/v2.24/lilypond-2.24.4.tar.gz
         sha256: e96fa03571c79f20e1979653afabdbe4ee42765a3d9fd14953f0cd9eea51781c
       - type: file
-        path: org.lyx.LyX.Plugin.LilyPond.metainfo.xml
-
-  #- name: texgyre #fonts
-    #buildsystem: simple
-   # build-commands:
-      #- install * /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/otf/
-    #sources:
-      #- type: archive
-       # url: https://www.gust.org.pl/projects/e-foundry/tex-gyre/whole/tg2_501otf.zip
-        #sha256: d7f8be5317bec4e644cf16c5abf876abeeb83c43dbec0ccb4eee4516b73b1bbe
-        
+        path: org.lyx.LyX.Plugin.LilyPond.metainfo.xml 
   - name: fonts
     buildsystem: simple
     build-commands:
-      - cp "gonville-20231028.4ec6d4f/*.otf" /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/otf/
-      - cp "gonville-20231028.4ec6d4f/*.svg" /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/svg/
-      - cp "gonville-20231028.4ec6d4f/*.woff" /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/svg/
+      - cp *.otf /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/otf/
+      - cp *.svg /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/svg/
+      - cp *.woff /app/plugins/LilyPond/share/lilypond/2.24.4/fonts/svg/
     sources:
       - type: archive #gonville
         url: https://www.chiark.greenend.org.uk/~sgtatham/gonville/gonville-20231028.4ec6d4f.tar.gz
