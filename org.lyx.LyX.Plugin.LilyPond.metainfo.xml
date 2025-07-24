@@ -3,12 +3,12 @@
   <id>org.lyx.LyX.Plugin.LilyPond</id>
   <extends>org.lyx.LyX</extends>
   <name>LilyPond</name>
-  <summary>Work with scores within LyX using LilyPond. Plugin name: org.lyx.LyX.Plugin.LilyPond</summary>
+  <summary>Work with scores within LyX using LilyPond.</summary>
   <url type="homepage">http://lilypond.org/</url>
   <project_license>GPL-2.0-or-later</project_license>
   <metadata_license>CC0-1.0</metadata_license>
   <update_contact>sixpalax_AT_gmail.com</update_contact>
   <releases>
-    <release version="2.4.2.1" date="2024-10-05"/>
+    <release version="2.24.4" date="2024-10-05"/>
   </releases>
 </component>
