@@ -28,6 +28,8 @@ modules:
       - --disable-docs
       #- --with-includes=/app/Extensions/include
       #- --with-libraries=/app/Extensions/lib
+    build-options:
+      cflags: -std=gnu17
     sources:
       - type: archive
         url: https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.xz
