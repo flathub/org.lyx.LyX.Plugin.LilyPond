@@ -1,7 +1,7 @@
 id: org.lyx.LyX.Plugin.LilyPond
 runtime: org.lyx.LyX
 runtime-version: stable
-sdk: org.kde.Sdk//6.8
+sdk: org.kde.Sdk//6.10
 build-extension: true
 separate-locales: false
 sdk-extensions:
@@ -28,6 +28,8 @@ modules:
       - --disable-docs
       #- --with-includes=/app/Extensions/include
       #- --with-libraries=/app/Extensions/lib
+    build-options:
+      cflags: -std=gnu17
     sources:
       - type: archive
         url: https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.xz
