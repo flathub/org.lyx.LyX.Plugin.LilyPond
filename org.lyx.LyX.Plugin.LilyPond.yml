@@ -15,13 +15,13 @@ cleanup:
   - /app/plugins/LilyPond/share/man
   - /app/plugins/LilyPond/include
 modules:
-  - name: gc-guile
+  - name: gc #guile
     buildsystem: autotools
     sources:
       - type: git
         url: https://github.com/ivmai/bdwgc.git
-        tag: v8.2.8
-        commit: ee59af3722e56de8404de6cd0c21c2493cc4d855
+        tag: v8.2.12
+        commit: 4fab5386df64466b2b61fc7209bef033cad1e6cc
         
   - name: guile
     buildsystem: autotools
@@ -29,12 +29,12 @@ modules:
       - --disable-docs
       #- --with-includes=/app/Extensions/include
       #- --with-libraries=/app/Extensions/lib
-    build-options:
-      cflags: -std=gnu17
+    # build-options:
+      # cflags: -std=gnu17
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.xz
-        sha256: bd7168517fd526333446d4f7ab816527925634094fbd37322e17e2b8d8e76388
+        url: https://ftp.gnu.org/gnu/guile/guile-3.0.11.tar.xz
+        sha256: 818c79d236657a7fa96fb364137cc7b41b3bdee0d65c6174ca03769559579460
         
   - name: fontforge
     buildsystem: cmake-ninja
