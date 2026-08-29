@@ -40,8 +40,9 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-      - -DENABLE_DOCS=false
-      - -DENABLE_LIBSPIRO=false
+      - -DENABLE_DOCS=OFF
+      - -DENABLE_GUI=FALSE
+      - -DENABLE_LIBSPIRO=FALSE
       - -DREAL_TYPE=double
       - -DCMAKE_INCLUDE_PATH=/app/plugins/LilyPond/include
     sources:
@@ -53,7 +54,7 @@ modules:
     buildsystem: autotools
     config-opts: 
       - --disable-documentation
-      - --enable-cairo-backend
+      # - --enable-cairo-backend
     build-options:
       arch:
         aarch64:
