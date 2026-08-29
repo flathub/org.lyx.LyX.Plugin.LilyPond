@@ -51,13 +51,6 @@ modules:
       # From https://src.fedoraproject.org/rpms/fontforge/blob/rawhide/f/0001-Fix-errors-in-French-and-Italian-translations.patch
       - type: patch
         path: fontforge-translation-errors.patch
-        
-  - name: t1utils
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url: https://github.com/kohler/t1utils/archive/v1.41.tar.gz
-        sha256: 0129fbfabb212143f52ff1e5de8ccbef5e5295d46772bad3ed149115bab5a094
       
   - name: lilypond
     buildsystem: autotools
