@@ -4,8 +4,6 @@ runtime-version: stable
 sdk: org.kde.Sdk//6.11
 build-extension: true
 separate-locales: false
-sdk-extensions:
-  - org.freedesktop.Sdk.Extension.texlive
 build-options:
   prefix: /app/plugins/LilyPond
   append-path: /app/plugins/LilyPond/bin
@@ -55,12 +53,6 @@ modules:
     config-opts: 
       - --disable-documentation
       # - --enable-cairo-backend
-    build-options:
-      arch:
-        aarch64:
-          prepend-path: /usr/lib/sdk/texlive/bin/aarch64-linux:/usr/lib/sdk/texlive/bin
-        x86_64:
-          prepend-path: /usr/lib/sdk/texlive/bin/x86_64-linux:/usr/lib/sdk/texlive/bin
     post-install: 
       - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml
     sources:
