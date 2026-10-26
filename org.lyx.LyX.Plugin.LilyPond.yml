@@ -1,7 +1,7 @@
 id: org.lyx.LyX.Plugin.LilyPond
 runtime: org.lyx.LyX
 runtime-version: stable
-sdk: org.kde.Sdk//6.10
+sdk: org.kde.Sdk//6.11
 build-extension: true
 separate-locales: false
 sdk-extensions:
