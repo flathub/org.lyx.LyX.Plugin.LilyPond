@@ -1,11 +1,11 @@
 id: org.lyx.LyX.Plugin.LilyPond
 runtime: org.lyx.LyX
 runtime-version: stable
-sdk: org.kde.Sdk//6.10
-build-extension: true
-separate-locales: false
+sdk: org.kde.Sdk//6.11
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.texlive
+build-extension: true
+separate-locales: false
 build-options:
   prefix: /app/plugins/LilyPond
   append-path: /app/plugins/LilyPond/bin
@@ -27,10 +27,6 @@ modules:
     buildsystem: autotools
     config-opts:
       - --disable-docs
-      #- --with-includes=/app/Extensions/include
-      #- --with-libraries=/app/Extensions/lib
-    # build-options:
-      # cflags: -std=gnu17
     sources:
       - type: archive
         url: https://ftp.gnu.org/gnu/guile/guile-3.0.11.tar.xz
@@ -49,18 +45,26 @@ modules:
       - type: archive
         url: https://github.com/fontforge/fontforge/releases/download/20251009/fontforge-20251009.tar.xz
         sha256: 69046500185a5581b58139dfad30c0b3d8128f00ebbfddc31f2fcf877e329e52
+        
+  - name: t1utils
+    cleanup:
+      - '*'
+    sources:
+      - type: archive
+        url: https://github.com/kohler/t1utils/archive/refs/tags/v1.42.tar.gz
+        sha256: d385fa78fca179e5edcf962bf1545a926f365c03e62b5a0ca5d80f104727ce81
       
   - name: lilypond
-    buildsystem: autotools
-    config-opts: 
-      - --disable-documentation
-      # - --enable-cairo-backend
     build-options:
       arch:
         aarch64:
           prepend-path: /usr/lib/sdk/texlive/bin/aarch64-linux:/usr/lib/sdk/texlive/bin
         x86_64:
           prepend-path: /usr/lib/sdk/texlive/bin/x86_64-linux:/usr/lib/sdk/texlive/bin
+    buildsystem: autotools
+    config-opts: 
+      - --disable-documentation
+      # - --enable-cairo-backend
     post-install: 
       - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml
     sources:
