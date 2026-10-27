@@ -25,10 +25,6 @@ modules:
     buildsystem: autotools
     config-opts:
       - --disable-docs
-      #- --with-includes=/app/Extensions/include
-      #- --with-libraries=/app/Extensions/lib
-    # build-options:
-      # cflags: -std=gnu17
     sources:
       - type: archive
         url: https://ftp.gnu.org/gnu/guile/guile-3.0.11.tar.xz
@@ -47,6 +43,14 @@ modules:
       - type: archive
         url: https://github.com/fontforge/fontforge/releases/download/20251009/fontforge-20251009.tar.xz
         sha256: 69046500185a5581b58139dfad30c0b3d8128f00ebbfddc31f2fcf877e329e52
+        
+  - name: t1utils
+    cleanup:
+      - '*'
+    sources:
+      - type: archive
+        url: https://github.com/kohler/t1utils/archive/refs/tags/v1.42.tar.gz
+        sha256: d385fa78fca179e5edcf962bf1545a926f365c03e62b5a0ca5d80f104727ce81
       
   - name: lilypond
     buildsystem: autotools
